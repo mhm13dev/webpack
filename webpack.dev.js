@@ -1,10 +1,11 @@
-const wcommon = require('./webpack.common');
+const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { chunk } = require('lodash');
 
-module.exports = merge(wcommon, {
+module.exports = merge(common, {
   mode: 'development', // Sets The Mode To development
   output: {
     filename: 'js/[name].js', // Output filename - [name] indicates property name in entry object
@@ -14,6 +15,8 @@ module.exports = merge(wcommon, {
     new HtmlWebpackPlugin({
       // Copies HTML template from source and spits into output directory - This plugin automatically add src and href in script and link tags according to dist directory
       template: path.resolve(__dirname, 'src', 'index.html'), // HTML template to compose the output html from
+      filename: 'index.html',
+      chunks: ['main'], // Name of Chunks to include in HTML file
     }),
   ],
   module: {

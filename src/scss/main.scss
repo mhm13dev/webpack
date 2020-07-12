@@ -1,8 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+  font-family: Nunito, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 body {
   background-color: #ffb169;
 }
 
-img {
-  width: 400px;
-  display: block;
+.title {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+  color: white;
+}
+
+.webpackLogo {
+  img {
+    max-width: 40rem;
+    display: block;
+    margin: 0 auto;
+  }
 }
